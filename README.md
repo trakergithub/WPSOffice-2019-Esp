@@ -25,7 +25,7 @@ Dado que el archivo `.deb` de WPS Office se actualiza constantemente, no se incl
 1.  Ve a la página oficial de descargas de WPS Office: **`https://www.wps.com/office/linux/`**
 2.  Busca la sección de descargas y selecciona el paquete para **DEB (64-bit)**.
 3.  Descarga el archivo.
-4.  Una vez descargado, **renombra** el archivo `.deb` que obtuviste (por ejemplo: `wps-office.deb`) al nombre que está hardcodeado en el script para asegurar una instalación correcta:
+4.  Una vez descargado, **renombra** el archivo `.deb` que obtuviste (por ejemplo: `wps-office-xxx.deb`) al nombre que está hardcodeado en el script para asegurar una instalación correcta:
 
     ```bash
     wps-office.deb
