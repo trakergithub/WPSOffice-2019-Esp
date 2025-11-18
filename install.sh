@@ -11,7 +11,7 @@ sudo apt autoclean
 clear
 
 #Instala la ultima versión de WPS al 18/11/2025 (app,y fuentes)
-sudo apt install wps-office_11.1.0.11723.XA_amd64.deb <<<'S'
+sudo apt install wps-office.deb <<<'S'
 sudo apt install ttf-wps-fonts_1.0_all.deb <<<'S'
 rm ~/.local/share/Kingsoft/wps-office/office6/dicts/spellcheck -rf
 rm ~/.local/share/Kingsoft/wps-office/office6/mui -rf
