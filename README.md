@@ -18,11 +18,27 @@ El objetivo principal es proporcionar una instalación funcional, multilingüe y
 
 ---
 
+## 📥 Instrucciones de Descarga del Paquete Base
+
+Dado que el archivo `.deb` de WPS Office se actualiza constantemente, no se incluye directamente en este repositorio. Sigue estos pasos para obtener la versión más reciente:
+
+1.  Ve a la página oficial de descargas de WPS Office: **`https://www.wps.com/office/linux/`**
+2.  Busca la sección de descargas y selecciona el paquete para **DEB (64-bit)**.
+3.  Descarga el archivo.
+4.  Una vez descargado, **renombra** el archivo `.deb` que obtuviste (por ejemplo: `wps-office.deb`) al nombre que está hardcodeado en el script para asegurar una instalación correcta:
+
+    ```bash
+    wps-office.deb
+    ```
+    > **NOTA:** Si deseas usar otro nombre de archivo, asegúrate de editar la línea de instalación dentro de `install.sh`.
+
+---
+
 ## ⚙️ Requisitos
 
 Asegúrate de que los siguientes archivos y carpetas se encuentren en el **mismo directorio** que el script `install.sh`:
 
-1.  `wps-office_11.1.0.11723.XA_amd64.deb` (Paquete binario de WPS Office).
+1.  `wps-office.deb` (El paquete DEB de WPS Office, renombrado si es necesario).
 2.  `ttf-wps-fonts_1.0_all.deb` (Paquete de fuentes complementarias).
 3.  Carpeta `dicts/` (Contiene los diccionarios de corrección ortográfica).
 4.  Carpeta `mui/` (Contiene los archivos de traducción de la interfaz de usuario).
@@ -32,26 +48,27 @@ Asegúrate de que los siguientes archivos y carpetas se encuentren en el **mismo
 ## 💻 Modo de Uso
 
 1.  Descarga o clona este repositorio en tu máquina Linux.
-2.  Abre la terminal en la ubicación del script.
-3.  Otorga permisos de ejecución al script:
+2.  **Asegúrate de haber descargado y renombrado el paquete DEB como se indica en la sección anterior.**
+3.  Abre la terminal en la ubicación del script.
+4.  Otorga permisos de ejecución al script:
 
     ```bash
     chmod +x install.sh
     ```
 
-4.  Ejecuta el script (se solicitará tu contraseña de `sudo`):
+5.  Ejecuta el script (se solicitará tu contraseña de `sudo`):
 
     ```bash
     ./install.sh
     ```
 
-> **⚠️ Nota:** El script realiza la instalación, configuración de diccionarios/traducciones y la corrección de PDF de forma automática. Al finalizar, iniciará la aplicación WPS Office (`wps &`) para confirmar la instalación.
+> **⚠️ Nota:** El script realiza la instalación, configuración de diccionarios/traducciones y la corrección de PDF de forma automática. Al finalizar, iniciará la aplicación WPS Office (`wps &`) para confirmar la instalación, una ves que lo inicies y aceptes los términos cierra la aplicación para que el script continué.
 
 ---
 
 ## 🛠️ Solución del Error de PDF
 
-La corrección para el problema de PDF para exportar documentos o abrirlos se implementa automáticamente mediante el siguiente comando:
+La corrección para el problema de PDF que no permite abrir ni exportar archivos en formato PDF se implementa automáticamente mediante el siguiente comando al finalizar el la ejecución del script:
 
 ```bash
 sudo ln -s /usr/lib/x86_64-linux-gnu/libtiff.so.6 /usr/lib/x86_64-linux-gnu/libtiff.so.5
